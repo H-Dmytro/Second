@@ -1,4 +1,4 @@
-function sayHello(name, surname){
-    console.log(`${name} ${surname}`);
+function sayHello(name, surname, someOtherWord){
+    console.log(`Hello ${name} ${surname} ${someOtherWord}`);
 }
 sayHello('Robot', 'Drfeassms'); // test added comment
