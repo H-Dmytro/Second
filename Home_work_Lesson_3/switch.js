@@ -23,5 +23,6 @@ function accessByName() {
             default :
                 console.log ("Hello guest.");
             };
-    }}
+    }
+}
     accessByName()

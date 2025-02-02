@@ -1,6 +1,6 @@
 function tasksWithVars() {
     const a = 10;
-    const b = 2;
+    const b = 2; 
     result_plus = a + b;
     result_multiplication = a * b;
     result_divison = a / b;

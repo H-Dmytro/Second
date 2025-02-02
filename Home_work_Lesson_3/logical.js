@@ -39,6 +39,7 @@ function accessByAge() {
         let check = (!status??true);
         console.log(check);
     }
+    
         accessByAge()
         accessByName()
         accessByName2()
