@@ -4,7 +4,7 @@ function tasksWithVars() {
     result_plus = a + b;
     result_multiplication = a * b;
     result_division = a / b;
-    result_substraction = a - b;
+    result_subtraction = a - b;
 
     console.log(result_plus, result_division, result_multiplication, result_subtraction);
 }
