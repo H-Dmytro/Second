@@ -54,7 +54,6 @@ function ifOperators() {
     console.log (num, num2++, num2++,num2--,num2);
 }
 
-
 tasksWithVars();
 variables();
 logicalType();

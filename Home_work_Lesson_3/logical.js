@@ -1,4 +1,4 @@
-// Logical "&&" operation
+// Logical "&&" operation.
 function accessByAge() {
     const age = 90;
     if ( age <= 1 && age > 0) {
@@ -19,7 +19,7 @@ function accessByAge() {
         console.log ("Long_lived age");
     }
 }
-// Logical "||" operation
+// Logical "||" operation.
 function accessByName() {
     let name = "Dima";
     let age1 = 16 ;
@@ -31,7 +31,7 @@ function accessByName() {
         console.log ("You are guest");
     }
 }
-// Logical "!" and "!!" and "??" operation
+// Logical "!" and "!!" and "??" operation.
 function accessByName2() {
     const name = "Dimja";
     const age1 = 20 ;
