@@ -1,11 +1,10 @@
 function tasksWithVars() {
     const a = 10;
     const b = 2;
-    result_plus = a + b;
-    result_multiplication = a * b;
-    result_division = a / b;
-    result_subtraction = a - b;
-
+    const result_plus = a + b;
+    const result_multiplication = a * b;
+    const result_division = a / b;
+    const result_subtraction = a - b;
     console.log(result_plus, result_multiplication,result_division, result_subtraction);
 }
 function variables() {
