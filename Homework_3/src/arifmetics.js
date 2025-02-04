@@ -6,7 +6,7 @@ function tasksWithVars() {
     result_division = a / b;
     result_subtraction = a - b;
 
-    console.log(result_plus, result_division, result_multiplication, result_subtraction);
+    console.log(result_plus, result_multiplication,result_division, result_subtraction);
 }
 function variables() {
     const str1 = `Hellow ` ;
