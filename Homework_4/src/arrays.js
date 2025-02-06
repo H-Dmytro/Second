@@ -21,9 +21,6 @@ const findNumber = arr.includes(1);
 console.log(findText || findNumber );
 console.log(findText && findNumber );
 
-
-
-
 const numberArr = [1, 30, 5, 60, 8, 10];
 
 const sortedBiggest = numberArr.sort((a,b) => b-a );
