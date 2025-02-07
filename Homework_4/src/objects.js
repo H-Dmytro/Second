@@ -1,4 +1,4 @@
-const products = {
+const product = {
     city: 'Kiev',
     companyName: 'FIxed',
     address: {
@@ -7,6 +7,11 @@ const products = {
         contactNumber: +380900000000
     }
 };
-console.log(products);
-console.log(Object.keys(products));
-console.log(Object.values(products));
+console.log(product);
+console.log(Object.keys(product));
+console.log(Object.values(product));
+
+function addPrice (product, price){
+    return Object.assign(product,{price});
+};
+console.log(addPrice(product, 'Test'));
