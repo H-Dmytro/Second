@@ -1,12 +1,6 @@
 function tasksWithVars() {
     const a = 10;
     const b = 2;
-    const resultPlus = a + b;
-    const resultMultiplication = a * b;
-    const resultDivision  = a / b;
-    const resultSubtraction = a - b;
-
-    console.log(resultPlus, resultMultiplication,resultDivision, resultSubtraction);
 }
 function variables() {
     const str1 = `Hellow ` ;
@@ -59,4 +53,4 @@ variables();
 logicalType();
 changesType();
 arithmeticalOperators();
-ifOperators();
+
