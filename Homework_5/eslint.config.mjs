@@ -1,6 +1,7 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
+import stylistic  from '@stylistic/eslint-plugin';
 
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -12,7 +13,8 @@ export default [
     pluginJs.configs.recommended,
     {
         plugins: {
-            unicorn: eslintPluginUnicorn
+            unicorn: eslintPluginUnicorn,
+            '@stylistic': stylistic
         },
         name: 'best practices rules',
         files: ['**/*.js'],
@@ -42,12 +44,16 @@ export default [
             'eol-last': ['error', 'always'],
             'no-var': ['error'],
             'prefer-const': 'error',
+            'one-var-declaration-per-line': ['error', 'initializations'],
+            'keyword-spacing': ['error', { before: true, after: true }],
             'unicorn/filename-case': [
                 'error',
                 {
                     case: 'kebabCase'
                 }
-            ]
+            ],
+            'comma-spacing': ['error', { before: false, after: true }],
+            '@stylistic/space-infix-ops': 'error'
         }
     }
 ];

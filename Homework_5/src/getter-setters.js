@@ -1,7 +1,7 @@
 class Mark {
     #model;
     #name;
-    constructor (name,model){
+    constructor (name, model){
         this.#model = model;
         this.#name = name;
     }
@@ -32,7 +32,7 @@ class Mark {
         return 'Please select the year';
     }
 }
-const mark = new Mark('BWM','X5');
+const mark = new Mark('BWM', 'X5');
 console.log (mark.name);
 console.log (mark.model);
 mark.name = 'Audi';
