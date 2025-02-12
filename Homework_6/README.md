@@ -1,25 +1,6 @@
-# js-eslint-config
-recommended config from me for programming on a JavaScript
+Homework 6 contains 
+promises.js
+Contains function that sends a request using fetch to retrieve a JSON resource and processes it with another function 
+using .then()
 
-In order to use this config you have to install the following NPM packages
-```
-npm init
-npm i -D @eslint/js eslint globals eslint-plugin-unicorn
-```
-
-Then put eslint.config.mjs and .prettierrc into your base directory
-
-you can add a script to your package.json
-```
-"scripts": {
-  "lint": "eslint .",
-  "build": "npm run lint && <build script>",
-}
-```
-
-**Alternatively**, just copy the content of this folder into your project folder and run
-```
-npm i
-```
-
-and start coding
+try-catch.js sends to invalid url request and gets error after that sends to the next url thats valid.
