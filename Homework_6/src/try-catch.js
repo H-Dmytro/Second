@@ -1,12 +1,13 @@
 async function getIp(){
-    try{
-    const response = await fetch ('https://api.coindesk.com/v1/bpi/currentprice.json');
-    if (!response.ok) {
-        console.log (`Some test error`);
-        throw new Error(`Some test error`);
+    try {
+        const response = await fetch ('https://api.coindesk.com/v1/bpi/currentprice.json');
+        if (!response.ok) {
+            console.log (`Some test error`);
+            throw new Error(`Some test error`);
         }
 
-    }catch (error) { 
+    } catch (error) {
+        console.error('Error fetching Bitcoin price:', error.message);
         const response2 = await fetch ('https://api.ipify.org/?format=json');
         if (!response2.ok) {
             throw new Error(`Failed to fetch IP address`);
