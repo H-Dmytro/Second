@@ -1,48 +1,35 @@
-class Person {
-    public name: string;
-    public age: number;
+import { Manager } from './abstraction';
+const emp: Manager = new Manager('Dmytro');
+emp.display();
 
-    public constructor(name: string, age: number) {
-        this.name = name;
-        this.age = age;
-    }
+const emp2: Manager = emp.find('Boss');
+emp2.display();
 
-    public greet(): void {
-        console.log(`Привіт,я ${this.name} і мені ${this.age} років.`);
-    }
+import { Person } from './class';
+const person1 = new Person('Dmytro', 30, 'Male', { numberPhone:1234555055 });
 
-    public haveBirthday(): void {
-        this.age++;
-        console.log(`З днем народження, ${this.name}! Тепер тобі ${this.age} років.`);
-    }
+console.log(person1.getName());
+console.log(person1.getAge());
+console.log(person1.checkIfAdult());
+console.log(person1.getNumber());
+
+person1.updateNumber({ numberPhone: 99999 });
+console.log(person1.getNumber());
+
+// Interfaces
+import { Results } from './interfaces';
+export async function getJson(): Promise<Results> {
+    const response = await fetch('https://datausa.io/api/data?drilldowns=Nation&measures=Population');
+    const json = await response.json() as Results;
+    return json;
 }
-
-class Car {
-    public make: string;
-    public model: string;
-    public year: number;
-
-    public constructor(make: string, model: string, year: number) {
-        this.make = make;
-        this.model = model;
-        this.year = year;
-    }
-
-    public start(): void {
-        console.log(`${this.make} ${this.model} ${this.year} завівся.`);
-    }
-
-    public drive(): void {
-        console.log(`${this.make} ${this.model} працює.`);
-    }
-}
-
-const person = new Person('Dmytro', 32);
-
-const car = new Car('KIA', 'Optima', 2013);
-
-person.greet();
-person.haveBirthday();
-
-car.start();
-car.drive();
+import { ArithmeticAveragePopulation, allNationalId } from './interfaces';
+(async () => {
+    const results = await getJson();
+    console.log(results.data[0]);
+    const allNationalIds = allNationalId(results.data);
+    console.log(allNationalIds);
+    console.log(results.data[0]['ID Nation']);
+    const averagePopulationCalculator = new ArithmeticAveragePopulation(results.data);
+    console.log('Average population:', averagePopulationCalculator.averagePopulation);
+})();

@@ -1,10 +1,12 @@
 export interface Results {
+    results: any;
     data: Data[];
     source: Source[];
     annotations: Annotations[];
 }
 
-interface Data {
+export interface Data {
+    results: any;
     'ID Nation': string;
     Nation: string;
     'ID Year': number;
@@ -13,7 +15,7 @@ interface Data {
     'Slug Nation': string;
 }
 
-interface Annotations {
+export interface Annotations {
     source_name: string;
     source_description: string;
     dataset_name: string;
@@ -30,13 +32,7 @@ interface Source {
     substitutions: any[];
 }
 
-export async function getJson(): Promise<Results> {
-    const response = await fetch('https://datausa.io/api/data?drilldowns=Nation&measures=Population');
-    const json = await response.json() as Results;
-    return json;
-}
-
-class ArithmeticAveragePopulation {
+export class ArithmeticAveragePopulation {
     private data: Data[];
     public averagePopulation: number;
 
@@ -56,19 +52,9 @@ class ArithmeticAveragePopulation {
     }
 }
 
-function allNationalId(data: Data[]): { ID: number; 'National ID': string }[] {
+export function allNationalId(data: Data[]): { ID: number; 'National ID': string }[] {
     return data.map((item, index) => ({
         ID: index + 1,
         'National ID': item['ID Nation']
     }));
-}
-
-(async () => {
-    const results = await getJson();
-    console.log(results.data[0]);
-    const allNationalIds = allNationalId(results.data);
-    console.log(allNationalIds);
-    console.log(results.data[0]['ID Nation']);
-    const averagePopulationCalculator = new ArithmeticAveragePopulation(results.data);
-    console.log('Average population:', averagePopulationCalculator.averagePopulation);
-})();
+};

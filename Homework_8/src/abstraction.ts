@@ -12,7 +12,7 @@ export abstract class Employee {
     public abstract find(name: string): Manager;
 }
 
-class Manager extends Employee {
+export class Manager extends Employee {
     public constructor(name: string) {
         super(name);
         console.log(`Manager created with name: ${this.name}`);
@@ -24,8 +24,8 @@ class Manager extends Employee {
     }
 }
 
-const emp: Manager = new Manager('Dmytro');
-emp.display();
+// const emp: Manager = new Manager('Dmytro');
+// emp.display();
 
-const emp2: Manager = emp.find('Boss');
-emp2.display();
+// const emp2: Manager = emp.find('Boss');
+// emp2.display();

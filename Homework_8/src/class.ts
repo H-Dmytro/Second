@@ -1,7 +1,7 @@
 export interface PhoneNumber {
     numberPhone: number;
 }
-class Person {
+export class Person {
     private name: string;
     private age: number;
     private gender: string;
@@ -41,14 +41,4 @@ class Person {
     public getNumber(): number {
         return this.phoneNumber.numberPhone;
     }
-}
-
-const person1 = new Person("Dmytro", 30, 'Male', { numberPhone:1234555055 });
-
-console.log(person1.getName());
-console.log(person1.getAge());
-console.log(person1.checkIfAdult());
-console.log(person1.getNumber());
-
-person1.updateNumber({ numberPhone: 99999 });
-console.log(person1.getNumber());
+};
