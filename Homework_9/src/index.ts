@@ -9,6 +9,5 @@ function printVehicleInfo(vehicle: BaseVehicle): void {
 const car = new Car('KIA', 120);
 const motorcycle = new Motorcycle('Yawa', 80);
 
-
 printVehicleInfo(car);
 printVehicleInfo(motorcycle);
