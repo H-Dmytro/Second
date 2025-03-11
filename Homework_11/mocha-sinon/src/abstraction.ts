@@ -22,10 +22,4 @@ export class Manager extends Employee {
         console.log(`Finding employee with name: ${name}`);
         return new Manager(name);
     }
-}
-
-// const emp: Manager = new Manager('Dmytro');
-// emp.display();
-
-// const emp2: Manager = emp.find('Boss');
-// emp2.display();
+};
