@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "6fdce03f-4656-4d79-83bb-51300e8e43bd",
+		"name": "Official_joke_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27979291",
+		"_collection_link": "https://interstellar-station-415751.postman.co/workspace/Octo-teams~d799f4da-69c7-45f4-b480-f40b57b3d469/collection/27979291-6fdce03f-4656-4d79-83bb-51300e8e43bd?action=share&source=collection_link&creator=27979291"
+	},
+	"item": [
+		{
+			"name": "Grab a random jokes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://official-joke-api.appspot.com/random_ten",
+					"protocol": "https",
+					"host": [
+						"official-joke-api",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"random_ten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Grab a random joke",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://official-joke-api.appspot.com/jokes/random",
+					"protocol": "https",
+					"host": [
+						"official-joke-api",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"jokes",
+						"random"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Grab any number of random jokes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"Created\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://official-joke-api.appspot.com/jokes/random/{{$randomInt}}",
+					"protocol": "https",
+					"host": [
+						"official-joke-api",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"jokes",
+						"random",
+						"{{$randomInt}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Grab random 10 jokes by type",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body(\"response_body_string\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://official-joke-api.appspot.com/jokes/programming/ten",
+					"protocol": "https",
+					"host": [
+						"official-joke-api",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"jokes",
+						"programming",
+						"ten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Grab joke by random id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.value).to.eql(100);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"string_you_want_to_search\");\r",
+							"});\r",
+							"pm.globals.get(\"variable_key\");"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://official-joke-api.appspot.com/jokes/{{$randomInt}}",
+					"protocol": "https",
+					"host": [
+						"official-joke-api",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"jokes",
+						"{{$randomInt}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Grab joke by id = 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.value).to.eql(100);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"string_you_want_to_search\");\r",
+							"});\r",
+							"pm.globals.get(\"variable_key\");"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://official-joke-api.appspot.com/jokes/1",
+					"protocol": "https",
+					"host": [
+						"official-joke-api",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"jokes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Grab jokes by type",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"string_you_want_to_search\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://official-joke-api.appspot.com/jokes/{{$randomFileType}}/random",
+					"protocol": "https",
+					"host": [
+						"official-joke-api",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"jokes",
+						"{{$randomFileType}}",
+						"random"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Grab jokes by type Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://official-joke-api.appspot.com/jokes/{{$randomFileType}}/random",
+					"protocol": "https",
+					"host": [
+						"official-joke-api",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"jokes",
+						"{{$randomFileType}}",
+						"random"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Joke by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://official-joke-api.appspot.com/jokes/random/250",
+					"protocol": "https",
+					"host": [
+						"official-joke-api",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"jokes",
+						"random",
+						"250"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Joke by ID Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://official-joke-api.appspot.com/jokes/random/250",
+					"protocol": "https",
+					"host": [
+						"official-joke-api",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"jokes",
+						"random",
+						"250"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "OfficialJokeApiBaseUrll",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
