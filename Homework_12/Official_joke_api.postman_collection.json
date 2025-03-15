@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "6fdce03f-4656-4d79-83bb-51300e8e43bd",
+		"name": "Official_joke_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27979291",
+		"_collection_link": "https://interstellar-station-415751.postman.co/workspace/Octo-teams~d799f4da-69c7-45f4-b480-f40b57b3d469/collection/27979291-6fdce03f-4656-4d79-83bb-51300e8e43bd?action=share&source=collection_link&creator=27979291"
+	},
+	"item": [
+		{
+			"name": "Grab a random jokes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{OfficialJokeApiBaseUrll}}/random_ten",
+					"host": [
+						"{{OfficialJokeApiBaseUrll}}"
+					],
+					"path": [
+						"random_ten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Grab a random joke",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"    });\r",
+							"   pm.test(\"Response contains an object with id and type\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.be.an('object');\r",
+							"    pm.expect(jsonData).to.have.property('id');\r",
+							"    pm.expect(jsonData).to.have.property('type');\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{OfficialJokeApiBaseUrll}}/jokes/random",
+					"host": [
+						"{{OfficialJokeApiBaseUrll}}"
+					],
+					"path": [
+						"jokes",
+						"random"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Grab any number of random jokes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response contains an object with id and type\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.be.an('object');\r",
+							"    pm.expect(jsonData).to.have.property('id');\r",
+							"    pm.expect(jsonData).to.have.property('type');\r",
+							"    pm.expect(jsonData).to.have.property('setup');\r",
+							"    pm.expect(jsonData).to.have.property('punchline');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{OfficialJokeApiBaseUrll}}/jokes/random/",
+					"host": [
+						"{{OfficialJokeApiBaseUrll}}"
+					],
+					"path": [
+						"jokes",
+						"random",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Grab random 10 jokes by type",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+							"});\r",
+							"pm.test(\"Responce contains an array \", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(pm.response.json()).to.be.an('array');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{OfficialJokeApiBaseUrll}}/jokes/programming/ten",
+					"host": [
+						"{{OfficialJokeApiBaseUrll}}"
+					],
+					"path": [
+						"jokes",
+						"programming",
+						"ten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Grab joke by random id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{OfficialJokeApiBaseUrll}}/jokes/{{$randomInt}}",
+					"host": [
+						"{{OfficialJokeApiBaseUrll}}"
+					],
+					"path": [
+						"jokes",
+						"{{$randomInt}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Grab joke by id = 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Response contains an object with id and type\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.be.an('object');\r",
+							"    pm.expect(jsonData).to.have.property('id', 1 );\r",
+							"    pm.expect(jsonData).to.have.property('type', \"general\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{OfficialJokeApiBaseUrll}}/jokes/{{Joke id}}",
+					"host": [
+						"{{OfficialJokeApiBaseUrll}}"
+					],
+					"path": [
+						"jokes",
+						"{{Joke id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Grab jokes by type",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{OfficialJokeApiBaseUrll}}/jokes/{{$randomFileType}}/random",
+					"host": [
+						"{{OfficialJokeApiBaseUrll}}"
+					],
+					"path": [
+						"jokes",
+						"{{$randomFileType}}",
+						"random"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Joke by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{OfficialJokeApiBaseUrll}}/jokes/random/250",
+					"host": [
+						"{{OfficialJokeApiBaseUrll}}"
+					],
+					"path": [
+						"jokes",
+						"random",
+						"250"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Joke by ID Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{OfficialJokeApiBaseUrll}}/jokes/random/250",
+					"host": [
+						"{{OfficialJokeApiBaseUrll}}"
+					],
+					"path": [
+						"jokes",
+						"random",
+						"250"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "OfficialJokeApiBaseUrll",
+			"value": "https://official-joke-api.appspot.com",
+			"type": "default"
+		},
+		{
+			"key": "Joke id",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}
