@@ -8,13 +8,92 @@
 	},
 	"item": [
 		{
+			"name": "Get Image by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response contains a valid cat object\", function () {\r",
+							"    pm.response.to.have.status(200); \r",
+							"    var jsonData = pm.response.json(); \r",
+							"    pm.expect(jsonData).to.be.an('object'); \r",
+							"    pm.expect(jsonData).to.have.property('id', \"cZHbIzC_l\");\r",
+							"    pm.expect(jsonData).to.have.property('url', \"https://cdn2.thecatapi.com/images/cZHbIzC_l.jpg\"); \r",
+							"    pm.expect(jsonData).to.have.property('breeds').that.is.an('array');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "live_gfxVzXiQd3acvUkNe2RjGNjBdKWnlOvn2BnEw4xGa0aOBDi2tXpWgNeT9wFufHeP",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-KEY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{TheCatApiBaseUrll}}images/{{id}}",
+					"host": [
+						"{{TheCatApiBaseUrll}}images"
+					],
+					"path": [
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Add my votes",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							""
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property('id');\r",
+							"});"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -43,16 +122,10 @@
 					]
 				},
 				"method": "POST",
-				"header": [
-					{
-						"key": "X-API-KEY",
-						"value": "",
-						"type": "text"
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"image_id\": \"asf2\",\r\n  \"sub_id\": \"my-user-1234\",\r\n  \"value\": 1\r\n}",
+					"raw": "{\r\n  \"image_id\": \"cZHbIzC_l\",\r\n  \"sub_id\": \"my-user-1234\",\r\n  \"value\": 1\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -72,7 +145,31 @@
 			"response": []
 		},
 		{
-			"name": "Get my votes",
+			"name": "Get my votes with added",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check added image id and URL\", function () {\r",
+							"    pm.response.to.have.status(200); \r",
+							"    var jsonData = pm.response.json();\r",
+							"    jsonData.forEach(function(item) { \r",
+							"        if (item.image && Object.keys(item.image).length > 0) { \r",
+							"            pm.expect(item.image).to.have.property('id', \"cZHbIzC_l\"); \r",
+							"            pm.expect(item.image).to.have.property('url', \"https://cdn2.thecatapi.com/images/cZHbIzC_l.jpg\"); \r",
+							"        } else {\r",
+							"            console.warn(\"Image is missing or empty for item with id:\", item.id); \r",
+							"        }\r",
+							"    });\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -109,9 +206,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{TheCatApiBaseUrll}}images/",
+					"raw": "{{TheCatApiBaseUrll}}votes/",
 					"host": [
-						"{{TheCatApiBaseUrll}}images"
+						"{{TheCatApiBaseUrll}}votes"
 					],
 					"path": [
 						""
@@ -121,7 +218,87 @@
 			"response": []
 		},
 		{
-			"name": "Add my votes to a Favourite",
+			"name": "Delete my vote by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "live_gfxVzXiQd3acvUkNe2RjGNjBdKWnlOvn2BnEw4xGa0aOBDi2tXpWgNeT9wFufHeP",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-KEY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"image_id\": \"asf2\",\r\n  \"sub_id\": \"my-user-1234\",\r\n  \"value\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{TheCatApiBaseUrll}}votes/ 1258969",
+					"host": [
+						"{{TheCatApiBaseUrll}}votes"
+					],
+					"path": [
+						" 1258969"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add my votes to a Favourite that contains earlier",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "apikey",
@@ -147,7 +324,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"image_id\":\"80022\",\r\n\t\"sub_id\": \"null\"\r\n}",
+					"raw": "{\r\n\t\"image_id\":\"cZHbIzC_l\",\r\n\t\"sub_id\": \"null\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -164,7 +341,29 @@
 			"response": []
 		},
 		{
-			"name": "Get my Votes Images",
+			"name": "Get my Favourites Images",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check my image added to favourites\", function () {\r",
+							"    pm.response.to.have.status(200); \r",
+							"    var jsonData = pm.response.json(); \r",
+							"    jsonData.forEach(function(item) { \r",
+							"        if (item.image && Object.keys(item.image).length > 0) { \r",
+							"            pm.expect(item.image).to.have.property('id', \"cZHbIzC_l\"); \r",
+							"        } else {\r",
+							"            console.warn(\"Image is missing or empty for item with id:\", item.id); \r",
+							"        }\r",
+							"    });\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -201,12 +400,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{TheCatApiBaseUrll}}images/80022",
+					"raw": "{{TheCatApiBaseUrll}}favourites/",
 					"host": [
-						"{{TheCatApiBaseUrll}}images"
+						"{{TheCatApiBaseUrll}}favourites"
 					],
 					"path": [
-						"80022"
+						""
 					]
 				}
 			},
@@ -253,7 +452,7 @@
 		},
 		{
 			"key": "id",
-			"value": "cpk",
+			"value": "cZHbIzC_l",
 			"type": "string"
 		}
 	]
