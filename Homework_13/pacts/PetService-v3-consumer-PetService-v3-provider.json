@@ -12,33 +12,33 @@
       ],
       "request": {
         "headers": {
-          "accept": "application/json",
-          "x-api-key": "1234"
+          "accept": "application/json"
         },
         "method": "GET",
-        "path": "/pet"
+        "path": "/v2/pet/5"
       },
       "response": {
-        "body": [
-          {
-            "category": {
+        "body": {
+          "category": {
+            "id": 0,
+            "name": "string"
+          },
+          "id": 5,
+          "name": "doggie",
+          "photoUrls": [
+            "string"
+          ],
+          "status": "string",
+          "tags": [
+            {
               "id": 0,
               "name": "string"
-            },
-            "id": 5,
-            "name": "doggie",
-            "photoUrls": [],
-            "status": "string",
-            "tags": [
-              {
-                "id": 0,
-                "name": "string"
-              }
-            ]
-          }
-        ],
+            }
+          ]
+        },
         "headers": {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "content-Type": "application/json"
         },
         "matchingRules": {
           "body": {

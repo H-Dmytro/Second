@@ -15,24 +15,22 @@ describe('PetService', () => {
     });
 
     // Дані-очікуваний приклад відповіді від сервера
-    const perResponseExample: Partial<PetDto[]> = [
-        {
-            id: 5,
-            category: {
+    const perResponseExample: Partial<PetDto> = {
+        id: 5,
+        category: {
+            id: 0,
+            name: 'string'
+        },
+        name: 'doggie',
+        photoUrls: ['string'],
+        tags: [
+            {
                 id: 0,
                 name: 'string'
-            },
-            name: 'doggie',
-            photoUrls: [],
-            tags: [
-                {
-                    id: 0,
-                    name: 'string'
-                }
-            ],
-            status: 'string'
-        } as unknown as PetDto
-    ];
+            }
+        ],
+        status: 'string'
+    } as unknown as PetDto;
 
     // Описуємо тіло відповіді з використанням MatchersV3
     const expectedBody = MatchersV3.like(perResponseExample);
@@ -41,49 +39,34 @@ describe('PetService', () => {
     describe('Consumer tests using Pact V3', () => {
         // Тест: перевіряє, чи повертає сервіс очікувану відповідь
         it('Pet service return expected response', () => {
-            return provider
+            provider
                 .given('Pet with id exists') // Попередній стан
                 .uponReceiving('A request to get pet by id') // Опис запиту
                 .withRequest({
                     method: 'GET', // Метод запиту
                     headers: {
-                        'x-api-key': '1234', // Токен API
+                    // 'x-api-key': '1234', // Токен API
                         accept: 'application/json'
                     },
-                    path: '/pet' // Шлях до ресурсу
+                    path: '/v2/pet/5' // Шлях до ресурсу
                 })
                 .willRespondWith({
                     status: 200, // Очікуваний статус відповіді
                     headers: {
-                        'Content-Type': 'application/json'
+                        'content-Type': 'application/json'
                     },
                     body: expectedBody // Очікуване тіло відповіді
                 });
-        });
 
-        // Тест: перевіряє функціональність клієнтського сервісу
-        it('Run Pet service consumer test', () => {
-            provider.executeTest(async (mockPetService) => {
-                // Ініціалізуємо сервіс з використанням макетного сервера
-                petService = new GetPetIdService(mockPetService.url, '1234');
+            return provider.executeTest(async (mockPetService) => {
+            // Ініціалізуємо сервіс з використанням макетного сервера
+                petService = new GetPetIdService(mockPetService.url, 'your-token-here');
 
                 // Викликаємо метод сервісу та отримуємо відповідь
-                const response = await petService.getPetById();
-
-                // Фільтруємо відповідь за ID
-                const filteredResponse = response.find(
-                    (pet) => pet.id === perResponseExample[0]?.id
-                );
+                const filteredResponse = await petService.getPetById('5');
 
                 // Очікування: відповідь повинна містити певні ключі
-                expect(filteredResponse).to.contain.keys(
-                    'id',
-                    'category',
-                    'name',
-                    'photoUrls',
-                    'tags',
-                    'status'
-                );
+                expect(filteredResponse).to.contain.keys('id', 'category', 'name', 'photoUrls', 'tags', 'status');
 
                 // Перевіряємо типи даних у відповіді
                 expect(filteredResponse?.id).to.be.a('number');
@@ -95,13 +78,14 @@ describe('PetService', () => {
             });
         });
     });
-});
-describe('PactV3 PetsStore Provider Verification', () => {
-    it('validates the expectations of Matching Service', () => {
-        return new Verifier({
-            providerBaseUrl: 'https://petstore.swagger.io',
-            pactUrls: [path.resolve(process.cwd(), './pacts/PetService-v3-consumer-PetService-v3-provider.json')]
-        })
-            .verifyProvider();
+
+    describe('PactV3 PetsStore Provider Verification', () => {
+        it('validates the expectations of Matching Service', () => {
+            return new Verifier({
+                providerBaseUrl: 'https://petstore.swagger.io',
+                pactUrls: [path.resolve(process.cwd(), './pacts/PetService-v3-consumer-PetService-v3-provider.json')]
+            })
+                .verifyProvider();
+        });
     });
 });
