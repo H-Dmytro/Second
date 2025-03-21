@@ -1,0 +1,76 @@
+{
+  "consumer": {
+    "name": "PetService-v3-consumer"
+  },
+  "interactions": [
+    {
+      "description": "A request to get pet by id",
+      "providerStates": [
+        {
+          "name": "Pet with id exists"
+        }
+      ],
+      "request": {
+        "headers": {
+          "accept": "application/json"
+        },
+        "method": "GET",
+        "path": "/v2/pet/5"
+      },
+      "response": {
+        "body": {
+          "category": {
+            "id": 0,
+            "name": "string"
+          },
+          "id": 5,
+          "name": "doggie",
+          "photoUrls": [
+            "string"
+          ],
+          "status": "string",
+          "tags": [
+            {
+              "id": 0,
+              "name": "string"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "content-Type": "application/json"
+        },
+        "matchingRules": {
+          "body": {
+            "$": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          },
+          "header": {},
+          "status": {}
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "14.0.0"
+    },
+    "pactRust": {
+      "ffi": "0.4.22",
+      "models": "1.2.3"
+    },
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  },
+  "provider": {
+    "name": "PetService-v3-provider"
+  }
+}
