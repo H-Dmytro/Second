@@ -60,7 +60,7 @@ describe('PetService', () => {
 
             return provider.executeTest(async (mockPetService) => {
             // Ініціалізуємо сервіс з використанням макетного сервера
-                petService = new GetPetIdService(mockPetService.url, 'your-token-here');
+                petService = new GetPetIdService(mockPetService.url);
 
                 // Викликаємо метод сервісу та отримуємо відповідь
                 const filteredResponse = await petService.getPetById('5');
