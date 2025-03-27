@@ -27,9 +27,8 @@ describe('Puppeteer rozetka tests', () => {
 
     it('should find Ноутбук goods', async () => {
         await page.goto('https://rozetka.com.ua/', { waitUntil: 'domcontentloaded' });
-        await page.locator('::-p-xpath(//a[@data-testid="fat_menu_category_link"])[1])').click();
-        await page.waitForSelector('.menu-wrapper_state_static');
-        await page.locator('::-p-xpath(//a[@data-testid="fat_menu_category_link"])[1])').click();
+        await page.locator('::-p-xpath((//a[@data-testid="fat_menu_category_link"])[1])').click();
+        await page.locator('::-p-xpath(//a[@title="Ноутбуки" and contains(@class, "tile-cats__heading")])').click();
         const goodsSelector = '.goods-tile__title';
         await page.waitForSelector(goodsSelector);
         const goods = await page.$$(goodsSelector);
@@ -41,9 +40,8 @@ describe('Puppeteer rozetka tests', () => {
     });
     it('should filter according to min cost', async () => {
         await page.goto('https://rozetka.com.ua/', { waitUntil: 'domcontentloaded' });
-        await page.locator('::-p-xpath(//a[@data-testid="fat_menu_category_link"])[1])').click();
-        await page.locator('::-p-xpath(//*[text()= "Ноутбуки"])').click();
-        await page.locator('::-p-xpath(//li[@class="checkbox-filter__item"][1])').click();
+        await page.locator('::-p-xpath((//a[@data-testid="fat_menu_category_link"])[1])').click();
+        await page.locator('::-p-xpath(//a[@title="Ноутбуки" and contains(@class, "tile-cats__heading")])').click();
         const inputSelector = '::-p-xpath(//input[@formcontrolname="min"])';
         await page.waitForSelector(inputSelector);
         await page.type(inputSelector, '1000');
