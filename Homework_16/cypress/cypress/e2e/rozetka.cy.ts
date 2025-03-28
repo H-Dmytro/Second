@@ -15,13 +15,14 @@ describe('template spec', () => {
         cy.get('[name="search"]').type('LG').should('have.value', 'LG');
         cy.contains('button', ' Знайти ').click();
         cy.get(':nth-child(2) > rz-catalog-tile').should('be.visible').click();
+        cy.get('[class="tabs__link tabs__link--active"]').should('exist');
         cy.url().then(url => {
             selectedTvUrl = url;
         });
     });
-
     it('Adds the chosen tv to the cart', () => {
         cy.visit(selectedTvUrl);
         cy.get('[aria-label="Купити"]').click();
+        cy.get('[class="h2 border padding"]').should('be.visible');
     });
 });
