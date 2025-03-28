@@ -21,6 +21,8 @@ describe('Rozetka tests with computers-notebooks goods', () => {
         await mainPage.goto();
         const notebookLink = $(mainPage.notebookLinkSelector);
         await notebookLink.click();
+        const notebookCategory = $('//a[@title="Ноутбуки" and contains(@class, "tile-cats__heading")]');
+        await notebookCategory.waitForDisplayed();
         linkNotebooksComputers = await browser.getUrl();
     });
 
@@ -37,9 +39,9 @@ describe('Rozetka tests with computers-notebooks goods', () => {
         await browser.url(linkNotebooks);
         const inputMin = $('//input[@formcontrolname="min"]');
         const inputMax = $('//input[@formcontrolname="max"]');
-        await inputMin.waitForEnabled();
+        await inputMin.waitForDisplayed();
         await inputMin.setValue('1000');
-        await inputMax.waitForEnabled();
+        await inputMax.waitForDisplayed();
         await inputMax.setValue('5000');
         const filterButton = $('//button[text()=" Ok "]');
         await filterButton.click();
