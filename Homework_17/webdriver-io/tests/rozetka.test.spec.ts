@@ -1,42 +1,42 @@
 import { $, browser, expect } from '@wdio/globals';
-import { RztkPage } from 'src/pages/rozetka.page';
+import { RztkPage } from 'src/pages/main.page';
+import { ComputersCategoryPage } from 'src/pages/computers.category.page';
+import { NotebooksSubcategoryPage } from 'src/pages/notebooks.subcategory.page';
 
 describe('Rozetka tests with computers-notebooks goods', () => {
-    let linkNotebooksComputers: string;
-    let linkNotebooks: string;
     let mainPage: RztkPage;
+    let computersCategoryPage: ComputersCategoryPage;
+    let notebookCategoryPage: NotebooksSubcategoryPage;
 
     before(async () => {
         await browser.maximizeWindow();
         mainPage = new RztkPage();
+        computersCategoryPage = new ComputersCategoryPage();
+        notebookCategoryPage = new NotebooksSubcategoryPage();
     });
+
     it('test Rozetka main page', async () => {
         await mainPage.goto();
-        const notebookCategory = $(mainPage.notebookLinkSelector);
-        await notebookCategory.waitForDisplayed();
-        await expect(notebookCategory).toBeDisplayed();
+        await mainPage.notebookLink.waitForDisplayed();
+        await expect(mainPage.notebookLink).toBeDisplayed();
     });
 
     it('should open the Rozetka computers-notebooks page', async () => {
         await mainPage.goto();
-        const notebookLink = $(mainPage.notebookLinkSelector);
-        await notebookLink.click();
-        const notebookCategory = $('//a[@title="Ноутбуки" and contains(@class, "tile-cats__heading")]');
-        await notebookCategory.waitForDisplayed();
-        linkNotebooksComputers = await browser.getUrl();
+        await mainPage.notebookLink.click();
+        await computersCategoryPage.notebookCategory.waitForDisplayed();
+        await expect(computersCategoryPage.notebookCategory).toBeDisplayed();
     });
 
     it('should Open Ноутбуки page', async () => {
-        await browser.url(linkNotebooksComputers);
-        const notebooksLink = $('//a[@title="Ноутбуки" and contains(@class, "tile-cats__heading")]');
-        await notebooksLink.waitForDisplayed();
-        await notebooksLink.click();
-        linkNotebooks = await browser.getUrl();
+        await computersCategoryPage.goto();
+        await computersCategoryPage.notebookCategory.waitForDisplayed();
+        await computersCategoryPage.navigateToNotebooks;
+        await expect(notebookCategoryPage.notebookSubcategoryPageTitle).toBeDisplayed();
     });
 
     it('should filter according to add min and max price value', async () => {
-        if (!linkNotebooks) throw new Error('Link to Notebooks page is not defined');
-        await browser.url(linkNotebooks);
+        await notebookCategoryPage.goto();
         const inputMin = $('//input[@formcontrolname="min"]');
         const inputMax = $('//input[@formcontrolname="max"]');
         await inputMin.waitForDisplayed();

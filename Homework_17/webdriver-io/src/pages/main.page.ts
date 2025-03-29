@@ -4,12 +4,12 @@ import { ChainablePromiseElement } from 'webdriverio';
 export class RztkPage {
     private baseUrl = 'https://rozetka.com.ua/ua/';
     private searchInputSelector = 'input[name="search"]';
-    public notebookLinkSelector = '(//a[@data-testid="fat_menu_category_link"])[1]';
+    private notebookLinkSelector = '(//a[@data-testid="fat_menu_category_link"])[1]';
 
-    private get searchInput(): ChainablePromiseElement {
+    public get searchInput(): ChainablePromiseElement {
         return $(this.searchInputSelector);
     }
-    private get notebookLink(): ChainablePromiseElement {
+    public get notebookLink(): ChainablePromiseElement {
         return $(this.notebookLinkSelector);
     }
 
