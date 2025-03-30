@@ -2,7 +2,7 @@ import { browser, expect } from '@wdio/globals';
 import { RztkPage } from 'src/pages/main.page';
 import { ComputersCategoryPage } from 'src/pages/computers.category.page';
 import { NotebooksSubcategoryPage } from 'src/pages/notebooks.subcategory.page';
-import { ComputersCategoryPageWithFilters } from 'src/pages/Filters.notebook.category.page';
+import { ComputersCategoryPageWithFilters } from 'src/pages/filters.notebook.category.page';
 
 describe('Rozetka tests with computers-notebooks goods', () => {
     let mainPage: RztkPage;
