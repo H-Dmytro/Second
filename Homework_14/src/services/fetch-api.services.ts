@@ -19,52 +19,6 @@ export class FetchApiService implements IApiService {
         });
     }
 
-    public async post(uri: string, body: unknown, headers?: Record<string, string>): Promise<Response> {
-        const defaultHeaders = {
-            ...this.getAuthHeaders(),
-            ...{
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            ...headers
-        };
-
-        return await fetch(`${this.baseUrl}${uri}`, {
-            method: 'POST',
-            headers: defaultHeaders
-        });
-    }
-
-    public async postForm(uri: string, formData: FormData, headers?: Record<string, string>): Promise<Response> {
-        const defaultHeaders = {
-            ...this.getAuthHeaders(),
-            ...headers
-        };
-
-        return await fetch(`${this.baseUrl}${uri}`, {
-            method: 'POST',
-            headers: defaultHeaders,
-            body: formData
-        });
-    }
-
-    public async delete (uri: string, body?: unknown, headers?: Record<string, string>): Promise<Response>{
-        const defaultHeaders = {
-            ...this.getAuthHeaders(),
-            ...{
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            ...headers
-        };
-
-        return await fetch(`${this.baseUrl}/${uri}`, {
-            method: 'DELETE',
-            headers: defaultHeaders,
-            body: JSON.stringify(body)
-        });
-    }
-
     private getAuthHeaders(): Record<string, string> {
         const headers: Record<string, string> = {};
         if (this.secret?.apiKey) {
