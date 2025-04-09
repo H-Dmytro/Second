@@ -35,3 +35,5 @@ test.describe('Rozetka header + main page tests', () => {
         await expect(pageWithFilters.catalogSelection).toBeVisible();
     });
 });
+
+
