@@ -20,4 +20,7 @@ export class PriceFilterElement {
         await this.maxInput.fill(max);
         await this.applyButton.click();
     }
+    public async apply(): Promise<void> {
+        await this.applyButton.click();
+      }
 }

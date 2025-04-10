@@ -19,13 +19,13 @@ test.describe('Rozetka header + main page tests', () => {
     test('Search notebooks via header', async () => {
         await mainPage.goto();
         await mainPage.header.searchFor('Ноутбук');
-        await expect(mainPage.getPage().locator('.search-form__input')).toHaveValue('Ноутбук');
+        await expect(mainPage.header.searchInput).toHaveValue('Ноутбук');
     });
 
     test('Navigate to notebook category from menu', async () => {
         await mainPage.goto();
         await mainPage.navigateToNotebooks();
-        await expect(mainPage.getPage().locator('.search-form__input')).toHaveValue('Notebook');
+        await expect(mainPage.header.searchInput).toHaveValue('Notebook');
     });
     test('Navigate to notebook subcategory and apply price filter', async () => {
         await pageWithFilters.goto();

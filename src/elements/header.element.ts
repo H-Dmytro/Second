@@ -13,7 +13,7 @@ export class HeaderElement {
         return this.headerElements.locator('[data-testid="fat_menu_btn"]');
     }
 
-    private get searchInput(): Locator {
+    public get searchInput(): Locator {
         return this.headerElements.locator('.search-form__input');
     }
 

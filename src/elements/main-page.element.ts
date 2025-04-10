@@ -1,0 +1,1 @@
+export const notebookLinkSelector = '(//a[@data-testid="fat_menu_category_link"])[1]';
