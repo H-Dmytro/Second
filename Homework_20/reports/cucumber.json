@@ -1,0 +1,95 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "rozetka-cucumber.js-autotests;user-is-able-to-sets-the-products-filter-by-price",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "User is able to sets the products filter by price",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 18493499
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 282331600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "the user is on the Rozetka>Notebook page",
+            "match": {
+              "location": "file:\\C:\\Users\\Admin\\Desktop\\Automation\\Homework_20\\src\\steps\\notebooks-category.steps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3446825499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "the user sets the price range from \"200\" to \"2000\"",
+            "match": {
+              "location": "file:\\C:\\Users\\Admin\\Desktop\\Automation\\Homework_20\\src\\steps\\filter-value.steps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 391591400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "the user is able to see the added min and max price",
+            "match": {
+              "location": "file:\\C:\\Users\\Admin\\Desktop\\Automation\\Homework_20\\src\\steps\\filter-value.steps.ts:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 55394700
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 17824000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 66483500
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "rozetka-cucumber.js-autotests",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Rozetka Cucumber.js Autotests",
+    "tags": [],
+    "uri": "features\\rozetka.feature"
+  }
+]
