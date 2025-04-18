@@ -1,0 +1,20 @@
+userName: dmytroherasymchu_Fph13w
+accessKey: 8BncYsxeFSPsr9Nry7qL
+projectName: H-Dmytro
+buildName: H-Dmytro playwright tests build
+buildIdentifier: '#9'
+CUSTOM_TAG_1: You can set a custom Build Tag here
+browserstackLocal: true
+debug: false
+networkLogs: false
+consoleLogs: errors
+testObservability: true
+browserstackAutomation: false
+platforms: []
+testContextOptions:
+  skipSessionStatus: true
+  skipSessionName: true
+browserStackLocalOptions:
+  localIdentifier: 18_Apr_1549_DESKTOP-S30TKIS_mthk
+  skipBinaryInitialisation: false
+proxySettings: {}
