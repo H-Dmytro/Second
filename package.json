@@ -15,5 +15,14 @@
     "url": "https://github.com/H-Dmytro/Second/issues"
   },
   "homepage": "https://github.com/H-Dmytro/Second#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@types/selenium-webdriver": "^4.1.28",
+    "@wdio/cli": "^9.12.2",
+    "cypress": "^14.2.0",
+    "selenium-webdriver": "^4.30.0"
+  },
+  "dependencies": {
+    "mocha": "^11.1.0"
+  }
 }
