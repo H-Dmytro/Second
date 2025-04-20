@@ -1,0 +1,7 @@
+2025-04-20 19:11:21 - [34mdebug[39m: Could not locate npm module path with error  Command failed: npm ls
+npm error code EJSONPARSE
+npm error JSON.parse Failed to parse root package.json
+npm error JSON.parse Failed to parse JSON data.
+npm error JSON.parse Note: package.json must be actual JSON, not just JavaScript.
+npm error A complete log of this run can be found in: C:\Users\Admin\AppData\Local\npm-cache\_logs\2025-04-20T16_11_19_205Z-debug-0.log
+

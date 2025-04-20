@@ -11,7 +11,9 @@ on:
 
 jobs:
   build:
-
+    env:
+      BUILD_FOLDER: ./Homework_19
+      HEADLESS: true
     runs-on: ubuntu-latest
 
     strategy:
@@ -26,5 +28,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
+    - name: install packages
+      run: npm ci
+      working-directory: ${{ env.BUILD_FOLDER }}
+    - name: install playwright browsers
+      run: npx playwright install --with-deps
+      working-directory: ${{ env.BUILD_FOLDER }}
+    - name: run playwright tests
+      run: npx run test
+      working-directory: ${{ env.BUILD_FOLDER }}
+
+    
 
