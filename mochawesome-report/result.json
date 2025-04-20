@@ -1,0 +1,146 @@
+{
+    "stats": {
+        "suites": 1,
+        "tests": 4,
+        "passes": 1,
+        "pending": 0,
+        "failures": 0,
+        "start": "Sun Apr 20 2025 10:38:03 GMT+0300 (Eastern European Summer Time)",
+        "end": "Sun Apr 20 2025 10:38:39 GMT+0300 (Eastern European Summer Time)",
+        "duration": 106905,
+        "testsRegistered": 4,
+        "passPercent": 25,
+        "pendingPercent": 0,
+        "other": 0,
+        "hasOther": false,
+        "skipped": 0,
+        "hasSkipped": false
+    },
+    "results": [
+        {
+            "uuid": "",
+            "title": "",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [],
+            "suites": [
+                {
+                    "uuid": "2143f1d4-006b-4745-ad99-669f68567f0e",
+                    "title": "Rozetka header + main page tests",
+                    "fullFile": "C:\\Users\\Admin\\Desktop\\Automation\\Homework_19\\tests\\rozetka\\rozetka.test.spec.ts",
+                    "file": "rozetka\\rozetka.test.spec.ts",
+                    "beforeHooks": [],
+                    "afterHooks": [],
+                    "tests": [
+                        {
+                            "parentTitle": "Rozetka header + main page tests",
+                            "title": "Main page opens and header is visible",
+                            "fullTitle": "Rozetka header + main page tests Main page opens and header is visible",
+                            "timedOut": false,
+                            "duration": 14340,
+                            "state": "passed",
+                            "speed": "slow",
+                            "pass": true,
+                            "fail": false,
+                            "pending": false,
+                            "context": "[{\"title\":\"screenshot\",\"value\":\"C:\\\\Users\\\\Admin\\\\Desktop\\\\Automation\\\\Homework_19\\\\test-results\\\\rozetka-rozetka.test-Rozet-96500-opens-and-header-is-visible-chromium\\\\test-finished-1.png\"}]",
+                            "code": "//Step: browserType.launch | Category: pw:api | Duration: 3807\n//Step: fixture: browser | Category: fixture | Duration: 3813\n//Step: browser.newContext | Category: pw:api | Duration: 59\n//Step: fixture: context | Category: fixture | Duration: 68\n//Step: browserContext.newPage | Category: pw:api | Duration: 1523\n//Step: fixture: page | Category: fixture | Duration: 1527\n//Step: beforeEach hook | Category: hook | Duration: 5425\n//Step: Before Hooks | Category: hook | Duration: 5428\n//Step: page.goto(https://rozetka.com.ua/ua/) | Category: pw:api | Duration: 9517\n//Step: locator.waitFor(body >> [class=\"header\"] >> [data-testid=\"menu_button\"]) | Category: pw:api | Duration: 938\n//Step: locator.click(body >> [class=\"header\"] >> [data-testid=\"menu_button\"]) | Category: pw:api | Duration: 173\n//Step: locator.waitFor((//a[@data-testid=\"fat_menu_category_link\"])[1]) | Category: pw:api | Duration: 26\n//Step: locator.waitFor(body >> [class=\"header\"]) | Category: pw:api | Duration: 307\n//Step: expect.toBeVisible | Category: expect | Duration: 36\n//Step: page.screenshot | Category: pw:api | Duration: 605\n//Step: fixture: page | Category: fixture | Duration: 2\n//Step: fixture: context | Category: fixture | Duration: 0\n//Step: video.saveAs | Category: pw:api | Duration: 5\n//Step: After Hooks | Category: hook | Duration: 1715",
+                            "err": {},
+                            "uuid": "a3d2f4cb-dffc-45d6-9b78-dbbd4b540b14",
+                            "isHook": false,
+                            "skipped": false
+                        },
+                        {
+                            "parentTitle": "Rozetka header + main page tests",
+                            "title": "Search notebooks via header",
+                            "fullTitle": "Rozetka header + main page tests Search notebooks via header",
+                            "timedOut": false,
+                            "duration": 30359,
+                            "state": "timedOut",
+                            "speed": "slow",
+                            "pass": false,
+                            "fail": false,
+                            "pending": false,
+                            "context": "[{\"title\":\"screenshot\",\"value\":\"C:\\\\Users\\\\Admin\\\\Desktop\\\\Automation\\\\Homework_19\\\\test-results\\\\rozetka-rozetka.test-Rozet-87cb5-Search-notebooks-via-header-chromium\\\\test-failed-1.png\"}]",
+                            "code": "//Step: browserType.launch | Category: pw:api | Duration: 1125\n//Step: fixture: browser | Category: fixture | Duration: 1132\n//Step: browser.newContext | Category: pw:api | Duration: 13\n//Step: fixture: context | Category: fixture | Duration: 19\n//Step: browserContext.newPage | Category: pw:api | Duration: 930\n//Step: fixture: page | Category: fixture | Duration: 933\n//Step: beforeEach hook | Category: hook | Duration: 2102\n//Step: Before Hooks | Category: hook | Duration: 2105\n//Step: page.goto(https://rozetka.com.ua/ua/) | Category: pw:api | Duration: 3180\n//Step: locator.waitFor(body >> [class=\"header\"] >> [data-testid=\"menu_button\"]) | Category: pw:api | Duration: 187\n//Step: locator.click(body >> [class=\"header\"] >> [data-testid=\"menu_button\"]) | Category: pw:api | Duration: 211\n//Step: locator.waitFor((//a[@data-testid=\"fat_menu_category_link\"])[1]) | Category: pw:api | Duration: 73\n//Step: locator.fill(body >> [class=\"header\"] >> .search-form__input) | Category: pw:api | Duration: 437\n//Step: page.screenshot | Category: pw:api | Duration: 190\n//Step: fixture: page | Category: fixture | Duration: 1\n//Step: fixture: context | Category: fixture | Duration: 0\n//Step: locator.click(body >> [class=\"header\"] >> .search-form__submit) | Category: pw:api | Duration: 25206\n//Step: video.saveAs | Category: pw:api | Duration: 9\n//Step: After Hooks | Category: hook | Duration: 361\n//Step: fixture: browser | Category: fixture | Duration: 202\n//Step: Worker Cleanup | Category: hook | Duration: 203",
+                            "err": {},
+                            "uuid": "7dd548fd-6055-4004-bf96-ff0149e93d06",
+                            "isHook": false,
+                            "skipped": false
+                        },
+                        {
+                            "parentTitle": "Rozetka header + main page tests",
+                            "title": "Navigate to notebook category from menu",
+                            "fullTitle": "Rozetka header + main page tests Navigate to notebook category from menu",
+                            "timedOut": false,
+                            "duration": 30534,
+                            "state": "timedOut",
+                            "speed": "slow",
+                            "pass": false,
+                            "fail": false,
+                            "pending": false,
+                            "context": "[{\"title\":\"screenshot\",\"value\":\"C:\\\\Users\\\\Admin\\\\Desktop\\\\Automation\\\\Homework_19\\\\test-results\\\\rozetka-rozetka.test-Rozet-53089-notebook-category-from-menu-chromium\\\\test-failed-1.png\"}]",
+                            "code": "//Step: browserType.launch | Category: pw:api | Duration: 2319\n//Step: fixture: browser | Category: fixture | Duration: 2324\n//Step: browser.newContext | Category: pw:api | Duration: 15\n//Step: fixture: context | Category: fixture | Duration: 21\n//Step: browserContext.newPage | Category: pw:api | Duration: 754\n//Step: fixture: page | Category: fixture | Duration: 757\n//Step: beforeEach hook | Category: hook | Duration: 3123\n//Step: Before Hooks | Category: hook | Duration: 3128\n//Step: page.goto(https://rozetka.com.ua/ua/) | Category: pw:api | Duration: 4019\n//Step: locator.waitFor(body >> [class=\"header\"] >> [data-testid=\"menu_button\"]) | Category: pw:api | Duration: 154\n//Step: locator.click(body >> [class=\"header\"] >> [data-testid=\"menu_button\"]) | Category: pw:api | Duration: 464\n//Step: locator.waitFor((//a[@data-testid=\"fat_menu_category_link\"])[1]) | Category: pw:api | Duration: 73\n//Step: page.screenshot | Category: pw:api | Duration: 225\n//Step: fixture: page | Category: fixture | Duration: 2\n//Step: fixture: context | Category: fixture | Duration: 1\n//Step: locator.click((//a[@data-testid=\"fat_menu_category_link\"])[1]) | Category: pw:api | Duration: 24879\n//Step: video.saveAs | Category: pw:api | Duration: 9\n//Step: After Hooks | Category: hook | Duration: 540\n//Step: fixture: browser | Category: fixture | Duration: 359\n//Step: Worker Cleanup | Category: hook | Duration: 361",
+                            "err": {},
+                            "uuid": "fd2a9588-cbde-4cbb-8287-297c732222fa",
+                            "isHook": false,
+                            "skipped": false
+                        },
+                        {
+                            "parentTitle": "Rozetka header + main page tests",
+                            "title": "Navigate to notebook subcategory and apply price filter",
+                            "fullTitle": "Rozetka header + main page tests Navigate to notebook subcategory and apply price filter",
+                            "timedOut": false,
+                            "duration": 31672,
+                            "state": "timedOut",
+                            "speed": "slow",
+                            "pass": false,
+                            "fail": false,
+                            "pending": false,
+                            "context": "[{\"title\":\"screenshot\",\"value\":\"C:\\\\Users\\\\Admin\\\\Desktop\\\\Automation\\\\Homework_19\\\\test-results\\\\rozetka-rozetka.test-Rozet-0193c-gory-and-apply-price-filter-chromium\\\\test-failed-1.png\"}]",
+                            "code": "//Step: browserType.launch | Category: pw:api | Duration: 2206\n//Step: fixture: browser | Category: fixture | Duration: 2212\n//Step: browser.newContext | Category: pw:api | Duration: 15\n//Step: fixture: context | Category: fixture | Duration: 21\n//Step: browserContext.newPage | Category: pw:api | Duration: 767\n//Step: fixture: page | Category: fixture | Duration: 770\n//Step: beforeEach hook | Category: hook | Duration: 3025\n//Step: Before Hooks | Category: hook | Duration: 3027\n//Step: page.goto(https://rozetka.com.ua/ua/computers-notebooks/c80253/) | Category: pw:api | Duration: 1749\n//Step: locator.waitFor(//h1) | Category: pw:api | Duration: 1444\n//Step: locator.click(//a[@title=\"Ноутбуки\" and contains(@class, \"tile-cats__heading\")]) | Category: pw:api | Duration: 2069\n//Step: locator.waitFor(//h1[text()=\"Ноутбуки\"]) | Category: pw:api | Duration: 1088\n//Step: locator.fill(rz-filter-slider >> input[formcontrolname=\"min\"]) | Category: pw:api | Duration: 2959\n//Step: locator.fill(rz-filter-slider >> input[formcontrolname=\"max\"]) | Category: pw:api | Duration: 509\n//Step: locator.click(rz-filter-slider >> button:has-text(\"Ok\")) | Category: pw:api | Duration: 971\n//Step: page.screenshot | Category: pw:api | Duration: 316\n//Step: fixture: page | Category: fixture | Duration: 0\n//Step: fixture: context | Category: fixture | Duration: 0\n//Step: locator.waitFor([class=\"catalog-selection\"]) | Category: pw:api | Duration: 19236\n//Step: video.saveAs | Category: pw:api | Duration: 4\n//Step: After Hooks | Category: hook | Duration: 1677\n//Step: fixture: browser | Category: fixture | Duration: 200\n//Step: Worker Cleanup | Category: hook | Duration: 200",
+                            "err": {},
+                            "uuid": "f02129a8-8bc1-4c95-8829-3d6d9f38e17d",
+                            "isHook": false,
+                            "skipped": false
+                        }
+                    ],
+                    "suites": [],
+                    "passes": [
+                        "a3d2f4cb-dffc-45d6-9b78-dbbd4b540b14"
+                    ],
+                    "failures": [],
+                    "pending": [],
+                    "skipped": [],
+                    "duration": 106905,
+                    "root": false,
+                    "rootEmpty": false,
+                    "_timeout": 0
+                }
+            ],
+            "passes": [],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 0,
+            "root": true,
+            "rootEmpty": true,
+            "_timeout": 0
+        }
+    ],
+    "meta": {
+        "mochawesome": {
+            "options": {},
+            "version": "7.1.3"
+        },
+        "marge": {
+            "options": {},
+            "version": "6.2.0"
+        },
+        "mocha": {
+            "version": "7.1.3"
+        }
+    }
+}
