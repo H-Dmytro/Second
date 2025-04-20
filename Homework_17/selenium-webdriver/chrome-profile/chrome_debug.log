@@ -1,0 +1,68 @@
+[18640:9424:0328/124948.129:INFO:chrome_browser_cloud_management_controller.cc(196)] No machine level policy manager exists.
+[4564:4804:0328/124948.807:WARNING:viz_main_impl.cc(85)] VizNullHypothesis is disabled (not a warning)
+[4564:4804:0328/124948.810:ERROR:direct_composition_support.cc(1122)] QueryInterface to IDCompositionDevice4 failed: No such interface supported (0x80004002)
+[21340:14860:0328/124949.267:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124949.267:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124949.347:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124949.377:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124949.522:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124949.530:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[18640:9424:0328/124949.545:INFO:CONSOLE(1)] "[object Object]", source: https://xl-static.rozetka.com.ua/main.207178b161869093.js (1)
+[18640:9424:0328/124949.545:INFO:CONSOLE(1)] "[object Object]", source: https://xl-static.rozetka.com.ua/main.207178b161869093.js (1)
+[18640:9424:0328/124949.736:INFO:CONSOLE(0)] "Not signed in with the identity provider.", source: https://rozetka.com.ua/ua/ (0)
+[18640:9424:0328/124949.746:INFO:CONSOLE(0)] "Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner.", source: https://rozetka.com.ua/ua/ (0)
+[21340:14860:0328/124949.760:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[18640:9424:0328/124949.761:INFO:CONSOLE(1)] "Uncaught NetworkError: Failed to execute 'importScripts' on 'WorkerGlobalScope': The script at 'https://api.exponea.com/js/service-worker.min.js' failed to load.", source: https://rozetka.com.ua/sw.js (1)
+[18640:9424:0328/124949.761:INFO:CONSOLE(0)] "An unknown error occurred when fetching the script.", source:  (0)
+[18640:9424:0328/124949.763:INFO:CONSOLE(64)] "TypeError: Failed to register a ServiceWorker for scope ('https://rozetka.com.ua/') with script ('https://rozetka.com.ua/sw.js'): ServiceWorker script evaluation failed", source: https://rozetka.com.ua/ua/ (64)
+[21340:14860:0328/124949.954:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[18640:9424:0328/124949.956:INFO:CONSOLE(1)] "[object Object]", source: https://xl-static.rozetka.com.ua/main.207178b161869093.js (1)
+[18640:9424:0328/124950.478:INFO:CONSOLE(72)] "[GSI_LOGGER]: FedCM get() rejects with NetworkError: Error retrieving a token.", source: https://accounts.google.com/gsi/client (72)
+[21340:14860:0328/124950.881:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124950.882:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124950.940:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124950.977:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124951.012:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124951.015:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[18640:9424:0328/124951.035:INFO:CONSOLE(1)] "[object Object]", source: https://xl-static.rozetka.com.ua/main.207178b161869093.js (1)
+[18640:9424:0328/124951.035:INFO:CONSOLE(1)] "[object Object]", source: https://xl-static.rozetka.com.ua/main.207178b161869093.js (1)
+[21340:14860:0328/124951.049:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[18640:9424:0328/124951.175:INFO:CONSOLE(1)] "[object Object]", source: https://xl-static.rozetka.com.ua/main.207178b161869093.js (1)
+[18640:9424:0328/124951.216:INFO:CONSOLE(0)] "Not signed in with the identity provider.", source: https://rozetka.com.ua/ua/computers-notebooks/c80253/ (0)
+[18640:9424:0328/124951.228:INFO:CONSOLE(0)] "Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner.", source: https://rozetka.com.ua/ua/computers-notebooks/c80253/ (0)
+[21340:14860:0328/124951.322:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[18640:9424:0328/124951.324:INFO:CONSOLE(1)] "Uncaught NetworkError: Failed to execute 'importScripts' on 'WorkerGlobalScope': The script at 'https://api.exponea.com/js/service-worker.min.js' failed to load.", source: https://rozetka.com.ua/sw.js (1)
+[18640:9424:0328/124951.324:INFO:CONSOLE(0)] "An unknown error occurred when fetching the script.", source:  (0)
+[18640:9424:0328/124951.325:INFO:CONSOLE(64)] "TypeError: Failed to register a ServiceWorker for scope ('https://rozetka.com.ua/') with script ('https://rozetka.com.ua/sw.js'): ServiceWorker script evaluation failed", source: https://rozetka.com.ua/ua/computers-notebooks/c80253/ (64)
+[18640:9424:0328/124952.508:INFO:CONSOLE(72)] "[GSI_LOGGER]: FedCM get() rejects with NetworkError: Error retrieving a token.", source: https://accounts.google.com/gsi/client (72)
+[21340:14860:0328/124952.817:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124952.831:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124952.915:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124952.992:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124953.229:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[18640:9424:0328/124953.231:INFO:CONSOLE(1)] "[object Object]", source: https://xl-static.rozetka.com.ua/main.207178b161869093.js (1)
+[21340:14860:0328/124953.465:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[18640:9424:0328/124953.632:INFO:CONSOLE(1)] "[object Object]", source: https://xl-static.rozetka.com.ua/main.207178b161869093.js (1)
+[18640:9424:0328/124953.731:INFO:CONSOLE(0)] "Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner.", source: https://rozetka.com.ua/ua/notebooks/c80004/ (0)
+[21340:14860:0328/124953.841:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[18640:9424:0328/124953.843:INFO:CONSOLE(1)] "Uncaught NetworkError: Failed to execute 'importScripts' on 'WorkerGlobalScope': The script at 'https://api.exponea.com/js/service-worker.min.js' failed to load.", source: https://rozetka.com.ua/sw.js (1)
+[18640:9424:0328/124953.843:INFO:CONSOLE(0)] "An unknown error occurred when fetching the script.", source:  (0)
+[18640:9424:0328/124953.863:INFO:CONSOLE(64)] "TypeError: Failed to register a ServiceWorker for scope ('https://rozetka.com.ua/') with script ('https://rozetka.com.ua/sw.js'): ServiceWorker script evaluation failed", source: https://rozetka.com.ua/ua/notebooks/c80004/ (64)
+[18640:9424:0328/124953.888:INFO:CONSOLE(0)] "Not signed in with the identity provider.", source: https://rozetka.com.ua/ua/notebooks/c80004/ (0)
+[21340:14860:0328/124955.405:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124955.409:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124955.519:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124955.548:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124955.633:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[21340:14860:0328/124955.635:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[18640:9424:0328/124955.677:INFO:CONSOLE(1)] "[object Object]", source: https://xl-static.rozetka.com.ua/main.207178b161869093.js (1)
+[18640:9424:0328/124955.677:INFO:CONSOLE(1)] "[object Object]", source: https://xl-static.rozetka.com.ua/main.207178b161869093.js (1)
+[21340:14860:0328/124956.049:ERROR:ssl_client_socket_impl.cc(877)] handshake failed; returned -1, SSL error code 1, net_error -202
+[18640:9424:0328/124956.051:INFO:CONSOLE(1)] "Uncaught NetworkError: Failed to execute 'importScripts' on 'WorkerGlobalScope': The script at 'https://api.exponea.com/js/service-worker.min.js' failed to load.", source: https://rozetka.com.ua/sw.js (1)
+[18640:9424:0328/124956.051:INFO:CONSOLE(0)] "An unknown error occurred when fetching the script.", source:  (0)
+[18640:9424:0328/124956.079:INFO:CONSOLE(64)] "TypeError: Failed to register a ServiceWorker for scope ('https://rozetka.com.ua/') with script ('https://rozetka.com.ua/sw.js'): ServiceWorker script evaluation failed", source: https://rozetka.com.ua/ua/notebooks/c80004/ (64)
+[18640:9424:0328/124956.106:INFO:CONSOLE(0)] "Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner.", source: https://rozetka.com.ua/ua/notebooks/c80004/ (0)
+[18640:9424:0328/124956.408:INFO:CONSOLE(0)] "Not signed in with the identity provider.", source: https://rozetka.com.ua/ua/notebooks/c80004/ (0)
+[18640:9424:0328/124957.086:INFO:CONSOLE(72)] "[GSI_LOGGER]: FedCM get() rejects with NetworkError: Error retrieving a token.", source: https://accounts.google.com/gsi/client (72)
+[18640:9424:0328/125000.070:INFO:CONSOLE(0)] "The resource https://rozetka.com.ua/assets/sprite/sprite.174c8761.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.", source: https://rozetka.com.ua/ua/notebooks/c80004/ (0)
+[18640:9424:0328/125020.545:INFO:CONSOLE(0)] "The resource https://rozetka.com.ua/assets/sprite/sprite.174c8761.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.", source: https://rozetka.com.ua/ua/notebooks/c80004/price=1000-5000/ (0)
