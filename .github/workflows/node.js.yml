@@ -23,6 +23,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        submodules: recursive  # Ensures submodules are initialized
+    - name: Initialize and Update Submodules
+      run: git submodule update --init --recursive
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
@@ -37,8 +41,5 @@ jobs:
     - name: run playwright tests
       run: npm run test
       working-directory: ${{ env.BUILD_FOLDER }}
-    
-
-
     
 
