@@ -1,7 +1,6 @@
 {
   "name": "lesson19-playwright-test",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "playwright test"
