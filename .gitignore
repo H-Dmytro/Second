@@ -1,1 +1,5 @@
 node_modules/
+allure-results/
+test-results/
+mochawesome-report/
+playwright-report/
